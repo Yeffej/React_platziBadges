@@ -1,0 +1,21 @@
+.Container {
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 0px 5px 0px #000;
+    width: 80%;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+.imgWrapper {
+    margin: 0.8rem;
+    margin-right: auto;
+}
+.imgWrapper img {
+    border-radius: 50%;    
+}
+.infoWrapper{
+    flex-grow: .9;
+}
+.infoWrapper p {
+    margin: 0;
+}
