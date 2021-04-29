@@ -13,7 +13,7 @@ class LiBadge extends React.Component {
                <div className="infoWrapper">
                     <h3>{source.firstName + " " + source.lastName}</h3>
                     <p>{source.jobTitle}</p>
-                    <a href="https://twitter.com/" target="_blank">@{source.twitter}</a>
+                    <a rel="noopener noreferrer" href="https://twitter.com/" target="_blank">@{source.twitter}</a>
                </div>
            </li>
         )

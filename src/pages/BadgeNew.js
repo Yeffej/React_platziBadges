@@ -1,6 +1,5 @@
 import React from "react"
 
-import NavBar from "../Components/NavBar";
 import Badge from "../Components/badge";
 import BadgeForm from "../Components/badgeForm";
 import heroImage from "../images/badge-header.svg";
@@ -27,9 +26,7 @@ class BadgePageNew extends React.Component {
     }
     render() {
         return(
-        <div>
-            <NavBar />
-
+        <React.Fragment>
             <section className="BadgeNew__hero">
                 <img className="ml-4" src={heroImage} alt="Logo de la platziConf"/>
             </section>
@@ -52,7 +49,7 @@ class BadgePageNew extends React.Component {
                     </div>
                 </div>
             </div>
-        </div>            
+        </React.Fragment>            
         );
     }
 }
