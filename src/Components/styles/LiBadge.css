@@ -19,3 +19,23 @@
 .infoWrapper p {
     margin: 0;
 }
+
+/* Skeleton Lodader */
+.skeleton {
+    width: 85%;
+    top:  50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.skeleton_p {
+    display: inline-block;
+    vertical-align: middle;
+    width: 90%;
+    margin-bottom: 10px;
+}
+.skeleton_img {
+    display: inline-block;
+    width: 10%;
+    vertical-align: middle;
+}

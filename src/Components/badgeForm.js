@@ -3,13 +3,11 @@ import React from "react";
 import BadgeInput from "./badgeInput";
 
 class BadgeForm extends React.Component {
-    handleClick() {
-        console.log("The button was clicked");
-    }
+    
     render() {
        return(
         <div>
-            <h1>New Attendant</h1>
+            <h1>{this.props.title}</h1>
             <form>
                 <BadgeInput onChange={this.props.onChange} 
                 value={this.props.formValues.firstName} title="First Name" name="firstName" placeholder="Type here"/>
@@ -23,7 +21,7 @@ class BadgeForm extends React.Component {
                 value={this.props.formValues.twitter} title="Twitter" name="twitter" placeholder="Type here"/>
 
                 <div>
-                    <button onClick={this.handleClick} type="button" className="btn btn-primary mb-2">Save</button>
+                    <button onClick={this.props.onSubmmit} type="button" className="btn btn-primary mb-2">Save</button>
                 </div> 
             </form>     
         </div>

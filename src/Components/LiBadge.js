@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom"
 import "./styles/LiBadge.css"
 
 class LiBadge extends React.Component {
@@ -11,8 +11,12 @@ class LiBadge extends React.Component {
                     <img src={source.avatarUrl} alt="Avatar" />
                </figure>
                <div className="infoWrapper">
-                    <h3>{source.firstName + " " + source.lastName}</h3>
-                    <p>{source.jobTitle}</p>
+                    <Link className="text-reset " 
+                    to={`/badges/${source.id}/edit`}>
+                        <h3>{source.firstName + " " + source.lastName}</h3>
+                        <p>{source.jobTitle}</p>
+                    </Link>
+
                     <a rel="noopener noreferrer" href="https://twitter.com/" target="_blank">@{source.twitter}</a>
                </div>
            </li>

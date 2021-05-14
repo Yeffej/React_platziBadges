@@ -8,7 +8,7 @@ import BadgeForm from "../Components/badgeForm";
 import PageLoader from "../Components/PageLoader";
 import heroImage from "../images/badge-header.svg";
 
-import "./Styles/badgeNew.css";
+import "./Styles/badgeEdit.css";
 
 class BadgePageNew extends React.Component {
     state = {
@@ -45,7 +45,7 @@ class BadgePageNew extends React.Component {
         }
         this.setState({loading: true, error: null})
         try {
-            await API.badges.create(this.state.Form)
+            await API.badges.update(this.props.match.params.badgesId,this.state.Form)
             this.setState({loading: false})
 
             this.props.history.push("/badges")
@@ -62,7 +62,7 @@ class BadgePageNew extends React.Component {
 
         return(
         <React.Fragment>
-            <section className="BadgeNew__hero">
+            <section className="BadgeEdit__hero">
                 <img className="ml-4" src={heroImage} alt="Logo de la platziConf"/>
             </section>
 
@@ -80,14 +80,29 @@ class BadgePageNew extends React.Component {
                     </div>
                     <div className="col-6">
                         {this.state.error && <h4>{this.state.error.message}</h4>}
-                        <BadgeForm title="New Attendant"
-                        onChange={this.handleChange} onSubmmit={this.handleSubmmit}
+                        <BadgeForm title="Edit attendant"
+                         onChange={this.handleChange} onSubmmit={this.handleSubmmit}
                          formValues={this.state.Form}/>
                     </div>
                 </div>
             </div>
         </React.Fragment>            
         );
+    }
+    async fetchData() {
+        try {
+            const data =  await API.badges.read(
+                this.props.match.params.badgesId
+            )
+            this.setState({loading: false, Form: data})
+        }catch(err) {
+            this.setState({loading: false, error: err})
+        }
+
+    }
+    componentDidMount() {
+        this.fetchData()
+        
     }
 }
 

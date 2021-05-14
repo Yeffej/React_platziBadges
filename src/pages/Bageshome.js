@@ -41,8 +41,8 @@ class BadgesHome extends React.Component {
                     <div>
                         <ul>
                             {this.checkTheData()}
-                            {this.state.data.map((el) => (
-                                <LiBadge source={el} key={el.id}/>
+                            {this.state.data.map((badge) => (
+                                <LiBadge key={badge.id} source={badge}/>
                             ))}
                         </ul>
                     </div>
