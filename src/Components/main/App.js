@@ -7,6 +7,7 @@ import BadgesHome from "../../pages/Bageshome";
 import Layout from "../Layout";
 import Home from "../home";
 import NotFound from "../../pages/NotFound";
+import BadgeDetailsContainer from "../../pages/Logic/BadgeDetailsContainer";
 
 function App() {
     return (
@@ -16,7 +17,8 @@ function App() {
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/badges" component={BadgesHome}></Route>
                     <Route exact path="/badges/new" component={BadgePageNew}></Route>
-                    <Route exact path="/badges/:badgesId/edit" component={BadgePageEdit}></Route>
+                    <Route exact path="/badges/:badgesId/edit" component={BadgePageEdit} />
+                    <Route exact path="/badges/:badgesId" component={BadgeDetailsContainer} />
                     <Route path="/404" component={NotFound} />
                     <Redirect from="*" to="/404"/>
                 </Switch>

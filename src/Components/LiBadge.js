@@ -6,13 +6,13 @@ class LiBadge extends React.Component {
     render() {
         const {source} = this.props
         return (
-           <li className="Container">
+           <li className="LiBadgeContainer">
                <figure className="imgWrapper">
                     <img src={source.avatarUrl} alt="Avatar" />
                </figure>
                <div className="infoWrapper">
                     <Link className="text-reset " 
-                    to={`/badges/${source.id}/edit`}>
+                    to={`/badges/${source.id}/`}>
                         <h3>{source.firstName + " " + source.lastName}</h3>
                         <p>{source.jobTitle}</p>
                     </Link>

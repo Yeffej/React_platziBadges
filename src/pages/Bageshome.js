@@ -34,7 +34,7 @@ class BadgesHome extends React.Component {
                     </div>
                 </section>
 
-                <section>
+                <section >
                     <div className="Badges__buttons">
                         <Link to="/badges/new" className="btn btn-primary">New Badge</Link>
                     </div>
@@ -71,9 +71,6 @@ class BadgesHome extends React.Component {
     }
     componentDidMount() {
         this.fetchData()
-    }
-    componentWillUnmount() {
-
     }
 
 }
